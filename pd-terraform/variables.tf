@@ -5,16 +5,14 @@ variable "pagerduty_token" {
 }
 
 variable "username" {
-  description = "PagerDuty user name"
-  type        = string
+  type = string
 }
 
 variable "email" {
-  description = "PagerDuty user email"
-  type        = string
+  type = string
 }
 
 variable "role" {
-  description = "PagerDuty user role (user/admin/etc)"
-  type        = string
+  type = string
 }
+``
