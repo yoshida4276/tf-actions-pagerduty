@@ -4,9 +4,16 @@ on:
   repository_dispatch:
     types: [terraform_request]
 
+permissions:
+  contents: read
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
+
+    # PagerDuty TokenはGitHub SecretsからTerraform変数へ渡す（実務的）
+    env:
+      TF_VAR_pagerduty_token: ${{ secrets.PAGERDUTY_TOKEN }}
 
     steps:
       - name: Checkout
