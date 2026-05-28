@@ -1,3 +1,4 @@
+
 name: Terraform PagerDuty
 
 on:
@@ -11,7 +12,6 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
-    # PagerDuty TokenはGitHub SecretsからTerraform変数へ渡す（実務的）
     env:
       TF_VAR_pagerduty_token: ${{ secrets.PAGERDUTY_TOKEN }}
 
